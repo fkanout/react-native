@@ -268,6 +268,7 @@ static NSDictionary *RCTDeleteStorageDirectory(NSString *storageDirectory)
       } else {
         // file does not exist after all, so remove from manifest (no need to save
         // manifest immediately though, as cost of checking again next time is negligible)
+        changedManifest = YES;
         [_manifest removeObjectForKey:key];
       }
     }
